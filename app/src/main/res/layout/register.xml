@@ -21,6 +21,87 @@
         app:layout_constraintStart_toStartOf="@+id/btn_select_photo_register"
         app:layout_constraintTop_toTopOf="@+id/btn_select_photo_register"
         app:srcCompat="@android:drawable/btn_star_big_on" />
+
+    <TextView
+        android:id="@+id/tw_AlreadyHaveAnAccount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="Already have an account?"
+        android:textColor="@color/colorLoginButtonTextColor"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_register"
+        tools:layout_editor_absoluteX="4dp" />
+
+    <EditText
+        android:id="@+id/et_emailRegister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/rounded_edittext_register_login"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:padding="15dp"
+        android:paddingLeft="10dp"
+        android:textColor="@color/colorPrimary"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toTopOf="@+id/et_passwordRegister"
+        app:layout_constraintTop_toBottomOf="@+id/et_usernameRegister"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <EditText
+        android:id="@+id/et_passwordRegister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/rounded_edittext_register_login"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:padding="15dp"
+        android:paddingLeft="10dp"
+        android:textColor="@color/colorPrimary"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toTopOf="@+id/et_password2Register"
+        app:layout_constraintTop_toBottomOf="@+id/et_emailRegister"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <EditText
+        android:id="@+id/et_password2Register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/rounded_edittext_register_login"
+        android:ems="10"
+        android:hint="Confirm"
+        android:inputType="textPassword"
+        android:padding="15dp"
+        android:paddingLeft="10dp"
+        android:textColor="@color/colorPrimary"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_register"
+        app:layout_constraintTop_toBottomOf="@+id/et_passwordRegister"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <EditText
+        android:id="@+id/et_usernameRegister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/rounded_edittext_register_login"
+        android:ems="10"
+        android:hint="Name"
+        android:inputType="textPersonName"
+        android:padding="15dp"
+        android:paddingLeft="10dp"
+        android:textColor="@color/colorPrimary"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toTopOf="@+id/et_emailRegister"
+        app:layout_constraintTop_toBottomOf="@+id/btn_select_photo_register"
+        tools:layout_editor_absoluteX="16dp" />
+
     <Button
         android:id="@+id/btn_select_photo_register"
         android:layout_width="150dp"
@@ -35,58 +116,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="packed" />
 
-    <EditText
-        android:id="@+id/et_usernameRegister"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
-        android:background="@drawable/rounded_edittext_register_login"
-        android:ems="10"
-        android:hint="Name"
-        android:inputType="textPersonName"
-        android:padding="15dp"
-        android:paddingLeft="10dp"
-        android:textColor="@color/colorPrimary"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toTopOf="@+id/et_emailRegister"
-        app:layout_constraintTop_toBottomOf="@+id/btn_select_photo_register"
-        tools:layout_editor_absoluteX="24dp" />
-
-    <EditText
-        android:id="@+id/et_emailRegister"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
-        android:background="@drawable/rounded_edittext_register_login"
-        android:ems="10"
-        android:hint="Email"
-        android:inputType="textEmailAddress"
-        android:padding="15dp"
-        android:paddingLeft="10dp"
-        android:textColor="@color/colorPrimary"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toTopOf="@+id/et_passwordRegister"
-        app:layout_constraintTop_toBottomOf="@+id/et_usernameRegister"
-        tools:layout_editor_absoluteX="20dp" />
-
-    <EditText
-        android:id="@+id/et_passwordRegister"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
-        android:background="@drawable/rounded_edittext_register_login"
-        android:ems="10"
-        android:hint="Password"
-        android:inputType="textPassword"
-        android:padding="15dp"
-        android:paddingLeft="10dp"
-        android:textColor="@color/colorPrimary"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_register"
-        app:layout_constraintTop_toBottomOf="@+id/et_emailRegister"
-        tools:layout_editor_absoluteX="20dp" />
-
-
     <Button
         android:id="@+id/btn_register"
         android:layout_width="match_parent"
@@ -96,22 +125,8 @@
         android:text="Register"
         android:textColor="@color/colorLoginButtonTextColor"
         app:layout_constraintBottom_toTopOf="@+id/tw_AlreadyHaveAnAccount"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_passwordRegister" />
-
-    <TextView
-        android:id="@+id/tw_AlreadyHaveAnAccount"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:text="Already have an account?"
-        android:textColor="@color/colorLoginButtonTextColor"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_register"
-        tools:layout_editor_absoluteX="58dp" />
+        app:layout_constraintTop_toBottomOf="@+id/et_password2Register"
+        tools:layout_editor_absoluteX="16dp" />
 
 
 

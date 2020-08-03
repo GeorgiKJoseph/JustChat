@@ -77,9 +77,22 @@ class RegisterActivity : AppCompatActivity() {
         val userName: String? = et_usernameRegister.text.toString()
         val email: String = et_emailRegister.text.toString()
         val password: String = et_passwordRegister.text.toString()
+        val password2: String = et_password2Register.text.toString()
 
-        if(email.isEmpty() || password.isEmpty()){
-            Toast.makeText(this,"Please enter email and password",Toast.LENGTH_SHORT).show();
+        if(userName!!.isEmpty()){
+            Toast.makeText(this,"Please enter Username",Toast.LENGTH_SHORT).show();
+            return
+        }
+        if(email.isEmpty()){
+            Toast.makeText(this,"Please enter email",Toast.LENGTH_SHORT).show();
+            return
+        }
+        if(password.isEmpty()){
+            Toast.makeText(this,"Please enter password",Toast.LENGTH_SHORT).show();
+            return
+        }
+        if(password != password2){
+            Toast.makeText(this,"Password does not match",Toast.LENGTH_SHORT).show();
             return
         }
 
@@ -105,14 +118,12 @@ class RegisterActivity : AppCompatActivity() {
 
         var filename = UUID.randomUUID().toString()
         val ref = FirebaseStorage.getInstance().getReference("/images/$filename")
-
         ref.putFile(selectedPhotoUri!!)
             .addOnSuccessListener {
                 Log.d("RegisterActivity","Successfully uploaded image: ${it.metadata!!.path}")
 
                 ref.downloadUrl.addOnSuccessListener {
                     Log.d("RegisterActivity","File Location: $it")
-
                     saveUserToFirebaseDatabase(it.toString())
                 }
             }

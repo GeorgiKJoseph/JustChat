@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.login.*
+import kotlinx.android.synthetic.main.register.*
 
 class LoginActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,7 +20,7 @@ class LoginActivity: AppCompatActivity() {
             val pass: String = et_passwordLogin.text.toString()
 
             if (email.isEmpty() || pass.isEmpty()) {
-                Toast.makeText(this,"Please enter email and password",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this,"Please enter username and password",Toast.LENGTH_SHORT).show();
                 return@setOnClickListener
             }
 
